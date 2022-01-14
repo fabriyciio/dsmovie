@@ -8,13 +8,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name ="tb_movie")
+
 public class Movie {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	private Double score;
-	private Integer cout;
+	private Integer count;
 	private String image;
 	
 	public Movie() {
@@ -26,7 +27,7 @@ public class Movie {
 		this.id = id;
 		this.title = title;
 		this.score = score;
-		this.cout = cout;
+		this.count = cout;
 		this.image = image;
 	}
 
@@ -54,12 +55,12 @@ public class Movie {
 		this.score = score;
 	}
 
-	public Integer getCout() {
-		return cout;
+	public Integer getCount() {
+		return count;
 	}
 
-	public void setCout(Integer cout) {
-		this.cout = cout;
+	public void setCount(Integer cout) {
+		this.count = cout;
 	}
 
 	public String getImage() {
