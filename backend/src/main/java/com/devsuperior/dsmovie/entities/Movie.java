@@ -11,10 +11,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="tb_movie")
-
+@Table(name = "tb_movie")
 public class Movie {
-	@Id 
+	
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
@@ -22,19 +22,16 @@ public class Movie {
 	private Integer count;
 	private String image;
 	
-	@OneToMany(mappedBy ="id.movie")
+	@OneToMany(mappedBy = "id.movie")
 	private Set<Score> scores = new HashSet<>();
 	
-	public Movie() {
-		
-	}
+	public Movie() {}
 
-	public Movie(Long id, String title, Double score, Integer cout, String image) {
-		
+	public Movie(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
 		this.title = title;
 		this.score = score;
-		this.count = cout;
+		this.count = count;
 		this.image = image;
 	}
 
@@ -66,8 +63,8 @@ public class Movie {
 		return count;
 	}
 
-	public void setCount(Integer cout) {
-		this.count = cout;
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public String getImage() {
@@ -81,7 +78,4 @@ public class Movie {
 	public Set<Score> getScores() {
 		return scores;
 	}
-
-	
-	
 }
